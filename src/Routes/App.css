@@ -1,0 +1,32 @@
+
+
+#root {
+    /* max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center; */
+}
+main {
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    grid-template-areas:
+        "head head"
+        "nav main"
+        "foot foot";
+    grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 150px 1fr;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    /* … */
+    main {
+        grid-template-areas:
+            "head"
+            "main"
+            "nav"
+            "foot";
+        grid-template-rows: repeat(1fr, 3);
+        grid-template-columns: 1fr;
+    }
+}
