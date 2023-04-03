@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import NavbarHeader from "./NavbarHeader";
 import Sider from "./Sider";
 import classes from "./RootLayout.module.css";
+import SplitScreen from "../Layout/SplitScreen";
 
 function RootLayout() {
     return (
@@ -12,12 +13,16 @@ function RootLayout() {
                 <NavbarHeader></NavbarHeader>
             </header>
             {/* body */}
-            <aside className={classes.aside}>
-                <Sider></Sider>
-            </aside>
-            <div className={classes.main}>
-                <Outlet></Outlet>
-            </div>
+            <SplitScreen leftWeight={1} rightWeight={4}>
+                {/* <Sider className={classes.aside}></Sider> */}
+                <aside className={classes.aside}>
+                    <Sider></Sider>
+                </aside>
+                <div className={classes.main}>
+                    <Outlet></Outlet>
+                </div>
+                {/* <Outlet className={classes.main}></Outlet> */}
+            </SplitScreen>
             {/* footer */}
             <footer className={classes.footer}>
                 <Footer></Footer>

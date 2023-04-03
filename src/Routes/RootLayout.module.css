@@ -7,11 +7,11 @@
     background-color: #8ca0ff;
 }
 
-.aside {
+/* .aside {
     display: unset;
     grid-area: nav;
     background-color: #ffa08c;
-}
+} */
 
 .main {
     grid-area: main;

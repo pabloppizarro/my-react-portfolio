@@ -2,11 +2,11 @@ import { useState } from "react";
 import "./App.css";
 import StackList from "../components/StackList";
 import { AiFillCustomerService } from "react-icons/ai";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RootLayout from "./RootLayout";
 import LandingPage from "../pages/LandingPage";
-
-
+import SplitScreen from "../Layout/SplitScreen";
+import Sider from "./Sider";
 
 const routes = createBrowserRouter([
     {
@@ -28,6 +28,7 @@ const routes = createBrowserRouter([
         ],
     },
 ]);
+
 function App() {
     const [count, setCount] = useState(0);
     //SIEMPRE SE DEVUELVE 1 ELEMENTO CON HIJOS, nunca un array de elementos.
