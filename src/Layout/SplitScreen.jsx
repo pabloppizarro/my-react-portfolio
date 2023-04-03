@@ -5,11 +5,13 @@ const Container = styled.div`
     display: grid;
     grid-area: main;
     grid-template-areas: "aside body";
-
+    grid-template-columns: ${({ weight }) => weight};
     @media only screen and (max-width: 768px) and (orientation: portrait) {
         grid-template-areas:
             "aside"
             "body";
+
+        grid-template-columns: 1fr;
     }
 `;
 const Pane = styled.div`
@@ -17,16 +19,17 @@ const Pane = styled.div`
     grid-area: ${(props) => props.area};
 `;
 
-function SplitScreen({ children, leftWeight = 1, rightWeight = 1 }) {
+function SplitScreen({ weight, children }) {
     const [left, right] = children;
+
+    const fr = weight.reduce((acc, val) => {
+        acc += `${val} `;
+        return acc;
+    }, "");
     return (
-        <Container>
-            <Pane area={"aside"} weight={leftWeight}>
-                {left}
-            </Pane>
-            <Pane area={"body"} weight={rightWeight}>
-                {right}
-            </Pane>
+        <Container weight={fr}>
+            <Pane area={"aside"}>{left}</Pane>
+            <Pane area={"body"}>{right}</Pane>
         </Container>
     );
 }

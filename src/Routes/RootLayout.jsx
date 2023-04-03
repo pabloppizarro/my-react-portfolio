@@ -13,7 +13,7 @@ function RootLayout() {
                 <NavbarHeader></NavbarHeader>
             </header>
             {/* body */}
-            <SplitScreen leftWeight={1} rightWeight={4}>
+            <SplitScreen weight={["1fr", "4fr"]}>
                 {/* <Sider className={classes.aside}></Sider> */}
                 <aside className={classes.aside}>
                     <Sider></Sider>

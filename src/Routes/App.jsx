@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import StackList from "../components/StackList";
 import { AiFillCustomerService } from "react-icons/ai";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RootLayout from "./RootLayout";
